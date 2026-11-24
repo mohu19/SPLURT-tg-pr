@@ -174,6 +174,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 /datum/preferences/proc/check_keybindings()
 	if(!parent)
 		return
+	if(!islist(key_bindings))
+		key_bindings = list()
+	// 修掉历史遗留的 null 键位条目；修复结果由本 proc 末尾的 save_preferences() 落盘。
+	sanitize_key_binding_values(key_bindings)
 	var/list/binds_by_key = get_key_bindings_by_key(key_bindings)
 	var/list/notadded = list()
 	for (var/name in GLOB.keybindings_by_name)

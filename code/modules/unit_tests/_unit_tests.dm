@@ -402,6 +402,7 @@
 #include "~zh\i18n_template.dm"
 #include "~zh\i18n_type_labels.dm"
 #include "~zh\i18n_unreverse.dm"
+#include "~zh\keybind_prefs_repair.dm"
 #include "~zh\localization_changelog.dm"
 #include "~zh\test_sharding.dm"
 #include "~zh\slime_naming.dm"
